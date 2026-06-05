@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Aplikasi web pencegahan bunuh diri dan layanan dukungan kesehatan mental profesional. Anda tidak sendirian, kami ada di sini untuk mendengarkan.">
+    <meta name="author" content="SPY-E & 123Tool">
+    <title>SinergiJiwa - Pusat Dukungan & Pencegahan Krisis Kesehatan Mental</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        crisis: {
+                            50: '#fff5f5',
+                            100: '#fed7d7',
+                            500: '#e53e3e',
+                            600: '#e53e3e',
+                            700: '#9b2c2c',
+                        },
+                        brand: {
+                            50: '#f0fdf4',
+                            100: '#dcfce7',
+                            600: '#16a34a',
+                            700: '#15803d',
+                            900: '#14532d',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        .glass-card {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 font-sans antialiased selection:bg-brand-100 selection:text-brand-900">
+
+    <div role="alert" class="bg-crisis-600 text-white text-center py-2.5 px-4 text-sm font-semibold sticky top-0 z-50 shadow-md flex items-center justify-center gap-2 animate-pulse">
+        <i data-lucide="phone-call" class="w-4 h-4"></i>
+        <span>Krisis Darurat? Hubungi Layanan Kemenkes RI: <a href="tel:119" class="underline hover:text-crisis-100 transition">119 Ext. 8</a> atau Into The Light via Hubungi Kami.</span>
+    </div>
+
+    <header class="bg-white/90 backdrop-blur-md border-b border-slate-200 sticky top-[40px] z-40 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+                <div class="p-2.5 bg-brand-50 text-brand-600 rounded-xl border border-brand-100 shadow-sm">
+                    <i data-lucide="heart-handshake" class="w-7 h-7"></i>
+                </div>
+                <div>
+                    <span class="text-xl font-bold tracking-tight text-slate-900 block">SinergiJiwa</span>
+                    <span class="text-[10px] font-medium tracking-widest text-slate-400 uppercase">Engine by SPY-E & 123Tool</span>
+                </div>
+            </div>
+            
+            <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-600">
+                <a href="#krisis" class="hover:text-brand-600 transition">Bantuan Darurat</a>
+                <a href="#deteksi" class="hover:text-brand-600 transition">Skrining Mandiri</a>
+                <a href="#edukasi" class="hover:text-brand-600 transition">Panduan Mitigasi</a>
+                <a href="#relaksasi" class="hover:text-brand-600 transition">Ruang Tenang</a>
+            </nav>
+
+            <div class="hidden md:flex items-center gap-4">
+                <a href="tel:119" class="inline-flex items-center gap-2 bg-crisis-500 hover:bg-crisis-600 text-white px-5 py-2.5 rounded-xl font-medium text-sm transition-all shadow-sm active:scale-95">
+                    <i data-lucide="phone" class="w-4 h-4"></i> Panggil 119
+                </a>
+            </div>
+
+            <button id="menuBtn" class="md:hidden p-2 text-slate-600 hover:text-slate-900 focus:outline-none" aria-label="Toggle Menu">
+                <i data-lucide="menu" id="menuIcon" class="w-6 Sec-h-6"></i>
+            </button>
+        </div>
+
+        <div id="mobileMenu" class="hidden md:hidden border-t border-slate-100 bg-white px-4 py-4 space-y-3 shadow-inner">
+            <a href="#krisis" class="block py-2 px-3 text-slate-700 hover:bg-slate-50 rounded-lg font-medium">Bantuan Darurat</a>
+            <a href="#deteksi" class="block py-2 px-3 text-slate-700 hover:bg-slate-50 rounded-lg font-medium">Skrining Mandiri</a>
+            <a href="#edukasi" class="block py-2 px-3 text-slate-700 hover:bg-slate-50 rounded-lg font-medium">Panduan Mitigasi</a>
+            <a href="#relaksasi" class="block py-2 px-3 text-slate-700 hover:bg-slate-50 rounded-lg font-medium">Ruang Tenang</a>
+            <a href="tel:119" class="block py-3 text-center bg-crisis-500 text-white rounded-xl font-medium text-sm">Panggil 119 (Bebas Pulsa)</a>
+        </div>
+    </header>
+
+    <main>
+        <section class="relative bg-gradient-to-b from-brand-50/50 via-white to-slate-50 pt-16 pb-24 overflow-hidden">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                    <div class="lg:col-span-7 text-center lg:text-left space-y-6">
+                        <div class="inline-flex items-center gap-2 bg-brand-100 text-brand-700 px-4 py-1.5 rounded-full text-xs font-semibold uppercase tracking-wider">
+                            <span class="flex h-2 w-2 rounded-full bg-brand-600 animate-ping"></span> Terenkripsi & Anonim
+                        </div>
+                        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-slate-900 leading-none">
+                            Badai Pasti Berlalu. <br><span class="text-brand-600">Kami Ada di Sini.</span>
+                        </h1>
+                        <p class="text-lg text-slate-600 max-w-2xl mx-auto lg:mx-0 font-normal leading-relaxed">
+                            Jika Anda atau seseorang yang Anda kenal sedang melalui masa sulit, berpikiran untuk mengakhiri hidup, atau berada dalam krisis emosional, ketahuilah bahwa Anda tidak sendirian. Layanan ini sepenuhnya gratis dan rahasia.
+                        </p>
+                        <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-4">
+                            <a href="#krisis" class="w-full sm:w-auto text-center bg-slate-900 hover:bg-slate-800 text-white px-8 py-4 rounded-xl font-semibold shadow-lg hover:shadow-xl transition-all active:scale-98 flex items-center justify-center gap-3">
+                                <i data-lucide="shield-alert" class="w-5 h-5"></i> Temukan Bantuan Segera
+                            </a>
+                            <a href="#deteksi" class="w-full sm:w-auto text-center bg-white hover:bg-slate-50 text-slate-700 border border-slate-200 px-8 py-4 rounded-xl font-semibold transition-all shadow-sm flex items-center justify-center gap-2">
+                                Tes Kesehatan Mental <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="lg:col-span-5 relative">
+                        <div class="absolute inset-0 bg-gradient-to-tr from-brand-100 to-emerald-100 rounded-3xl transform rotate-3 scale-105 opacity-60 blur-sm"></div>
+                        <div class="relative bg-white border border-slate-200 rounded-2xl p-6 sm:p-8 shadow-xl space-y-6">
+                            <h3 class="text-lg font-bold text-slate-900 flex items-center gap-2 border-b border-slate-100 pb-4">
+                                <i data-lucide="clock" class="text-brand-600 w-5 h-5"></i> Akses Cepat Saluran Hubung
+                            </h3>
+                            <div class="space-y-4">
+                                <div class="p-4 bg-slate-50 hover:bg-brand-50/40 border border-slate-100 rounded-xl transition flex items-start gap-4">
+                                    <div class="p-3 bg-red-100 text-red-600 rounded-lg"><i data-lucide="phone-forwarded" class="w-5 h-5"></i></div>
+                                    <div>
+                                        <h4 class="font-bold text-slate-800">Kemenkes RI Emergency</h4>
+                                        <p class="text-xs text-slate-500 mb-2">Layanan gawat darurat medis nasional umum.</p>
+                                        <a href="tel:119" class="text-sm font-bold text-red-600 inline-flex items-center gap-1 hover:underline">Hubungi 119 Ext. 8 <i data-lucide="external-link" class="w-3 h-3"></i></a>
+                                    </div>
+                                </div>
+                                <div class="p-4 bg-slate-50 hover:bg-brand-50/40 border border-slate-100 rounded-xl transition flex items-start gap-4">
+                                    <div class="p-3 bg-brand-100 text-brand-600 rounded-lg"><i data-lucide="message-square" class="w-5 h-5"></i></div>
+                                    <div>
+                                        <h4 class="font-bold text-slate-800">Into The Light Indonesia</h4>
+                                        <p class="text-xs text-slate-500 mb-2">Komunitas pencegahan bunuh diri berbasis rujukan.</p>
+                                        <a href="https://www.intothelightid.org/tentang-bunuh-diri/layanan-konseling-psikolog-psikiater/" target="_blank" rel="noopener" class="text-sm font-bold text-brand-600 inline-flex items-center gap-1 hover:underline">Akses Rujukan Pendampingan <i data-lucide="external-link" class="w-3 h-3"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="krisis" class="py-20 bg-white border-y border-slate-200">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+                    <h2 class="text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl">Direktori Layanan Krisis Nasional</h2>
+                    <p class="text-lg text-slate-600">Silakan hubungi penyedia jasa di bawah ini. Layanan ini dijalankan oleh tenaga terlatih secara profesional untuk membantu Anda keluar dari fase krisis.</p>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="border border-slate-200 rounded-2xl p-6 bg-slate-50/50 flex flex-col justify-between hover:shadow-lg transition">
+                        <div class="space-y-4">
+                            <div class="flex items-center justify-between">
+                                <span class="px-3 py-1 bg-red-100 text-red-700 text-xs font-bold rounded-full uppercase tracking-wider">Layanan Medis & Jiwa</span>
+                                <i data-lucide="shield" class="text-slate-400 w-5 h-5"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-slate-900">Kementerian Kesehatan RI</h3>
+                            <p class="text-sm text-slate-600 leading-relaxed">Saluran darurat nasional terintegrasi untuk penanganan kondisi gawat darurat fisik maupun psikis.</p>
+                        </div>
+                        <div class="mt-6 pt-4 border-t border-slate-100">
+                            <a href="tel:119" class="w-full inline-flex items-center justify-center gap-2 bg-crisis-600 hover:bg-crisis-700 text-white font-bold py-3 px-4 rounded-xl transition text-sm">
+                                <i data-lucide="phone" class="w-4 h-4"></i> Panggil Telepon 119
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="border border-slate-200 rounded-2xl p-6 bg-slate-50/50 flex flex-col justify-between hover:shadow-lg transition">
+                        <div class="space-y-4">
+                            <div class="flex items-center justify-between">
+                                <span class="px-3 py-1 bg-blue-100 text-blue-700 text-xs font-bold rounded-full uppercase tracking-wider">LSM Pendampingan</span>
+                                <i data-lucide="heart" class="text-slate-400 w-5 h-5"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-slate-900">Yayasan Pulih</h3>
+                            <p class="text-sm text-slate-600 leading-relaxed">Fokus pada pemulihan trauma psikologis dan intervensi krisis sosial emosional untuk semua kalangan secara aman.</p>
+                        </div>
+                        <div class="mt-6 pt-4 border-t border-slate-100 space-y-2">
+                            <a href="https://wa.me/628118436633" target="_blank" rel="noopener" class="w-full inline-flex items-center justify-center gap-2 bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-3 px-4 rounded-xl transition text-sm">
+                                <i data-lucide="message-circle" class="w-4 h-4"></i> WhatsApp Admin Pulih
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="border border-slate-200 rounded-2xl p-6 bg-slate-50/50 flex flex-col justify-between hover:shadow-lg transition">
+                        <div class="space-y-4">
+                            <div class="flex items-center justify-between">
+                                <span class="px-3 py-1 bg-purple-100 text-purple-700 text-xs font-bold rounded-full uppercase tracking-wider">Pemberdayaan Wanita</span>
+                                <i data-lucide="user-check" class="text-slate-400 w-5 h-5"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-slate-900">LBH APIK & Komnas Perempuan</h3>
+                            <p class="text-sm text-slate-600 leading-relaxed">Layanan perlindungan komprehensif bagi korban kekerasan berbasis gender yang memicu trauma psikis berat.</p>
+                        </div>
+                        <div class="mt-6 pt-4 border-t border-slate-100">
+                            <a href="tel:1500730" class="w-full inline-flex items-center justify-center gap-2 bg-slate-900 hover:bg-slate-800 text-white font-bold py-3 px-4 rounded-xl transition text-sm">
+                                <i data-lucide="phone-call" class="w-4 h-4"></i> SAPA 129 (KPPPA)
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="deteksi" class="py-20 bg-slate-50">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6">
+                <div class="text-center mb-12 space-y-3">
+                    <h2 class="text-3xl font-extrabold text-slate-900 tracking-tight">Alat Skrining Mandiri (Kuesioner PHQ-9)</h2>
+                    <p class="text-slate-600 max-w-xl mx-auto">Patient Health Questionnaire-9 adalah instrumen standar medis internasional untuk mengukur tingkat keparahan depresi secara objektif.</p>
+                </div>
+
+                <div class="bg-white border border-slate-200 rounded-2xl shadow-xl overflow-hidden">
+                    <div class="bg-slate-900 px-6 py-4 flex items-center justify-between text-white">
+                        <span class="text-xs font-bold tracking-wider uppercase text-slate-400">Evaluasi Klinis</span>
+                        <span id="quizProgressText" class="text-xs font-bold bg-brand-600 px-2.5 py-1 rounded-md">Pertanyaan 1 dari 9</span>
+                    </div>
+                    <div class="w-full bg-slate-200 h-1.5">
+                        <div id="quizProgressBar" class="bg-brand-600 h-1.5 transition-all duration-300" style="width: 11.11%"></div>
+                    </div>
+
+                    <div class="p-6 sm:p-10 space-y-8">
+                        <div id="questionWrapper">
+                            <h3 id="questionText" class="text-xl font-bold text-slate-900 tracking-tight leading-snug">1. Kurang berminat atau bergairah dalam melakukan sesuatu?</h3>
+                            <p class="text-xs text-slate-400 mt-1">Dalam 2 minggu terakhir, seberapa sering Anda terganggu oleh masalah ini?</p>
+                        </div>
+
+                        <div class="grid grid-cols-1 gap-3" id="optionsWrapper">
+                            <button onclick="QuizEngine.selectAnswer(0)" class="w-full text-left p-4 rounded-xl border border-slate-200 hover:border-brand-500 hover:bg-brand-50/30 font-medium transition flex justify-between items-center group">
+                                <span>Tidak pernah sama sekali</span>
+                                <i data-lucide="circle" class="w-4 h-4 text-slate-300 group-hover:text-brand-600"></i>
+                            </button>
+                            <button onclick="QuizEngine.selectAnswer(1)" class="w-full text-left p-4 rounded-xl border border-slate-200 hover:border-brand-500 hover:bg-brand-50/30 font-medium transition flex justify-between items-center group">
+                                <span>Beberapa hari</span>
+                                <i data-lucide="circle" class="w-4 h-4 text-slate-300 group-hover:text-brand-600"></i>
+                            </button>
+                            <button onclick="QuizEngine.selectAnswer(2)" class="w-full text-left p-4 rounded-xl border border-slate-200 hover:border-brand-500 hover:bg-brand-50/30 font-medium transition flex justify-between items-center group">
+                                <span>Lebih dari separuh waktu yang dimaksud</span>
+                                <i data-lucide="circle" class="w-4 h-4 text-slate-300 group-hover:text-brand-600"></i>
+                            </button>
+                            <button onclick="QuizEngine.selectAnswer(3)" class="w-full text-left p-4 rounded-xl border border-slate-200 hover:border-brand-500 hover:bg-brand-50/30 font-medium transition flex justify-between items-center group">
+                                <span>Hampir setiap hari</span>
+                                <i data-lucide="circle" class="w-4 h-4 text-slate-300 group-hover:text-brand-600"></i>
+                            </button>
+                        </div>
+
+                        <div id="resultWrapper" class="hidden space-y-6 animate-fadeIn">
+                            <div class="p-6 rounded-xl border text-center space-y-3" id="resultCardClass">
+                                <span class="text-xs font-bold uppercase tracking-widest block text-slate-500">Hasil Analisis Skor Anda</span>
+                                <h4 id="resultScoreLabel" class="text-3xl font-black text-slate-900">00 / 27</h4>
+                                <p id="resultStatus" class="font-bold text-lg text-slate-800">Depresi Ringan</p>
+                                <p id="resultDesc" class="text-sm text-slate-600 max-w-xl mx-auto leading-relaxed">Deskripsi indikasi klinis medis.</p>
+                            </div>
+
+                            <div class="bg-amber-50 border border-amber-200 text-amber-900 p-4 rounded-xl text-xs flex items-start gap-3">
+                                <i data-lucide="alert-triangle" class="w-5 h-5 flex-shrink-0 text-amber-600"></i>
+                                <p class="leading-relaxed"><strong>Sangkalan Penting (Disclaimer):</strong> Hasil skrining ini adalah indikasi awal dan bukan merupakan diagnosis medis final / pengganti konsultasi psikiater. Jika Anda memiliki kecenderungan melukai diri sendiri atau bunuh diri, segera hubungi kontak darurat di atas tanpa menunda.</p>
+                            </div>
+
+                            <div class="text-center pt-2">
+                                <button onclick="QuizEngine.resetQuiz()" class="inline-flex items-center gap-2 text-sm font-semibold text-slate-600 hover:text-slate-900 underline decoration-2 underline-offset-4">
+                                    <i data-lucide="rotate-ccw" class="w-4 h-4"></i> Ulangi Tes Skrining
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="edukasi" class="py-20 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-3xl mx-auto mb-16 space-y-3">
+                    <h2 class="text-3xl font-extrabold text-slate-900 tracking-tight">Panduan Mitigasi Krisis</h2>
+                    <p class="text-slate-600">Langkah nyata yang divalidasi oleh psikolog klinis untuk menangani pikiran bunuh diri pada diri sendiri maupun deteksi dini pada orang terdekat.</p>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                    <div class="space-y-6">
+                        <h3 class="text-xl font-bold text-slate-900 flex items-center gap-2.5">
+                            <span class="p-1.5 bg-brand-100 text-brand-600 rounded-lg"><i data-lucide="user-x" class="w-5 h-5"></i></span> Jika Hal Ini Terjadi pada Diri Anda
+                        </h3>
+                        <div class="relative border-l-2 border-slate-200 pl-6 ml-4 space-y-8">
+                            <div class="relative">
+                                <span class="absolute -left-[31px] top-0 bg-brand-600 text-white text-xs w-4 h-4 rounded-full flex items-center justify-center ring-4 ring-white font-bold">1</span>
+                                <h4 class="font-bold text-slate-900">Tunda Keputusan Tersebut</h4>
+                                <p class="text-sm text-slate-600 mt-1 leading-relaxed">Berjanjilah pada diri sendiri untuk menunggu selama 24 jam atau bahkan 1 jam saja. Pikiran krisis bersifat impulsif dan intensitasnya akan menurun seiring waktu berjalan.</p>
+                            </div>
+                            <div class="relative">
+                                <span class="absolute -left-[31px] top-0 bg-brand-600 text-white text-xs w-4 h-4 rounded-full flex items-center justify-center ring-4 ring-white font-bold">2</span>
+                                <h4 class="font-bold text-slate-900">Amankan Lingkungan Sekitar Anda</h4>
+                                <p class="text-sm text-slate-600 mt-1 leading-relaxed">Jauhkan diri Anda dari benda-benda berbahaya, obat-obatan dosis tinggi, atau tempat tinggi yang berpotensi membahayakan keselamatan fisik Anda.</p>
+                            </div>
+                            <div class="relative">
+                                <span class="absolute -left-[31px] top-0 bg-brand-600 text-white text-xs w-4 h-4 rounded-full flex items-center justify-center ring-4 ring-white font-bold">3</span>
+                                <h4 class="font-bold text-slate-900">Buka Suara & Hubungi Rujukan SinergiJiwa</h4>
+                                <p class="text-sm text-slate-600 mt-1 leading-relaxed">Hubungi sahabat, keluarga, atau kontak darurat nasional 119. Katakan secara jujur apa yang Anda rasakan saat ini. Jangan mengisolasi diri.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="space-y-6">
+                        <h3 class="text-xl font-bold text-slate-900 flex items-center gap-2.5">
+                            <span class="p-1.5 bg-amber-100 text-amber-600 rounded-lg"><i data-lucide="users" class="w-5 h-5"></i></span> Jika Terjadi pada Orang Terdekat Anda
+                        </h3>
+                        <div class="relative border-l-2 border-slate-200 pl-6 ml-4 space-y-8">
+                            <div class="relative">
+                                <span class="absolute -left-[31px] top-0 bg-amber-500 text-white text-xs w-4 h-4 rounded-full flex items-center justify-center ring-4 ring-white font-bold">1</span>
+                                <h4 class="font-bold text-slate-900">Kenali Isyarat Peringatan Verbal/Nonverbal</h4>
+                                <p class="text-sm text-slate-600 mt-1 leading-relaxed">Perhatikan kalimat seperti "Aku ingin istirahat selamanya" atau perilaku mendadak seperti membagikan barang berharga dan menarik diri total.</p>
+                            </div>
+                            <div class="relative">
+                                <span class="absolute -left-[31px] top-0 bg-amber-500 text-white text-xs w-4 h-4 rounded-full flex items-center justify-center ring-4 ring-white font-bold">2</span>
+                                <h4 class="font-bold text-slate-900">Dengarkan Tanpa Menghakimi (Active Listening)</h4>
+                                <p class="text-sm text-slate-600 mt-1 leading-relaxed">Hindari memberikan nasihat klise seperti "Kamu kurang bersyukur" atau "Kamu harus kuat". Valitasi rasa sakit emosional mereka dengan tulus.</p>
+                            </div>
+                            <div class="relative">
+                                <span class="absolute -left-[31px] top-0 bg-amber-500 text-white text-xs w-4 h-4 rounded-full flex items-center justify-center ring-4 ring-white font-bold">3</span>
+                                <h4 class="font-bold text-slate-900">Antar ke Profesional Kesehatan Mental</h4>
+                                <p class="text-sm text-slate-600 mt-1 leading-relaxed">Jangan biarkan mereka sendirian. Temani dan bantu jadwalkan sesi konsultasi psikolog klinis di Puskesmas terdekat atau Rumah Sakit Jiwa rujukan.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="relaksasi" class="py-20 bg-slate-900 text-white overflow-hidden relative">
+            <div class="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(22,163,74,0.15),transparent)] pointer-none"></div>
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 text-center space-y-10 relative z-10">
+                <div class="space-y-3">
+                    <span class="px-3 py-1 bg-white/10 text-brand-400 text-xs font-bold rounded-full uppercase tracking-widest inline-block">Ruang Tenang & Regulasi Emosi</span>
+                    <h2 class="text-3xl font-black tracking-tight sm:text-4xl">Teknik Stabilisasi Napas (Box Breathing)</h2>
+                    <p class="text-slate-400 max-w-xl mx-auto text-sm">Gunakan simulator taktis interaktif ini saat Anda mengalami serangan kecemasan hebat, panik, atau impuls krisis emosional tinggi.</p>
+                </div>
+
+                <div class="flex flex-col items-center justify-center space-y-8 py-6">
+                    <div id="breathingSphere" class="w-40 h-40 bg-brand-600/20 border-4 border-brand-500 rounded-full flex flex-col items-center justify-center shadow-[0_0_50px_rgba(22,163,74,0.3)] transition-all duration-1000 ease-in-out transform scale-100">
+                        <span id="breathingAction" class="text-lg font-black tracking-wide text-white uppercase">Siap</span>
+                        <span id="breathingTimer" class="text-sm font-semibold text-brand-300 mt-1">0s</span>
+                    </div>
+
+                    <div class="flex items-center justify-center gap-3">
+                        <button id="startBreathingBtn" onclick="BreathingEngine.toggle()" class="bg-brand-600 hover:bg-brand-700 text-white font-bold px-6 py-3 rounded-xl shadow-lg transition active:scale-95 flex items-center gap-2 text-sm">
+                            <i data-lucide="play" class="w-4 h-4"></i> Mulai Latihan Napas
+                        </button>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 text-left">
+                    <div class="p-4 bg-white/5 border border-white/10 rounded-xl"><span class="text-brand-400 font-bold block text-sm">1. Tarik Napas</span><span class="text-xs text-slate-400">Lewat hidung secara perlahan (4 Detik).</span></div>
+                    <div class="p-4 bg-white/5 border border-white/10 rounded-xl"><span class="text-brand-400 font-bold block text-sm">2. Tahan Napas</span><span class="text-xs text-slate-400">Kunci udara di dalam paru-paru (4 Detik).</span></div>
+                    <div class="p-4 bg-white/5 border border-white/10 rounded-xl"><span class="text-brand-400 font-bold block text-sm">3. Hembuskan</span><span class="text-xs text-slate-400">Lepaskan lewat mulut perlahan (4 Detik).</span></div>
+                    <div class="p-4 bg-white/5 border border-white/10 rounded-xl"><span class="text-brand-400 font-bold block text-sm">4. Tahan Paru</span><span class="text-xs text-slate-400">Kosongkan paru-paru sebelum mengulang (4 Detik).</span></div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-slate-950 text-slate-400 border-t border-slate-900 text-sm py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row items-center justify-between gap-6 border-b border-slate-900 pb-8">
+                <div class="flex items-center gap-3">
+                    <div class="p-2 bg-white/5 text-brand-500 rounded-lg"><i data-lucide="heart-handshake" class="w-5 h-5"></i></div>
+                    <div>
+                        <span class="text-white font-bold block">SinergiJiwa App</span>
+                        <span class="text-xs text-slate-500">Aman • Terenkripsi • Berorientasi Sosial</span>
+                    </div>
+                </div>
+                <div class="text-center md:text-right">
+                    <span class="text-xs font-mono text-slate-500 block">PROYEK PENGEMBANGAN TEKNOLOGI SOSIAL</span>
+                    <span class="text-xs font-semibold text-slate-300">DIKEMBANGKAN OLEH: <span class="text-brand-400">SPY-E & 123Tool</span></span>
+                </div>
+            </div>
+            <div class="flex flex-col sm:flex-row items-center justify-between pt-8 gap-4 text-xs text-slate-500">
+                <p>&copy; 2026 SinergiJiwa Core Framework. Dilindungi Hak Cipta Sosial Bebas Distribusi.</p>
+                <p class="flex items-center gap-1.5"><i data-lucide="shield-check" class="w-4 h-4 text-brand-500"></i> Secure Static Client-Side System Deployment</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // INIT LUCIDE ICONS EXECUTIVE ENVIRONMENT
+        document.addEventListener("DOMContentLoaded", () => {
+            lucide.createIcons();
+            UIController.initMobileMenu();
+        });
+
+        // NAVBAR & DOM INTERACTION CONTROLLER
+        const UIController = {
+            initMobileMenu() {
+                const menuBtn = document.getElementById('menuBtn');
+                const mobileMenu = document.getElementById('mobileMenu');
+                const menuIcon = document.getElementById('menuIcon');
+
+                menuBtn.addEventListener('click', () => {
+                    const isHidden = mobileMenu.classList.toggle('hidden');
+                    if (!isHidden) {
+                        menuIcon.setAttribute('data-lucide', 'x');
+                    } else {
+                        menuIcon.setAttribute('data-lucide', 'menu');
+                    }
+                    lucide.createIcons();
+                });
+
+                // Auto Close Menu on Click Element
+                mobileMenu.querySelectorAll('a').forEach(link => {
+                    link.addEventListener('click', () => {
+                        mobileMenu.classList.add('hidden');
+                        menuIcon.setAttribute('data-lucide', 'menu');
+                        lucide.createIcons();
+                    });
+                });
+            }
+        };
+
+        // CLINICAL PHQ-9 QUESTIONNAIRE ENGINE MODEL
+        const QuizEngine = {
+            questions: [
+                "Kurang berminat atau bergairah dalam melakukan sesuatu?",
+                "Merasa murung, sedih, atau putus asa?",
+                "Sulit tidur, terbangun di malam hari, atau malah tidur berlebihan?",
+                "Merasa lelah atau kurang bertenaga sepanjang hari?",
+                "Kurang nafsu makan atau malah makan berlebihan?",
+                "Merasa kecewa pada diri sendiri, merasa gagal, atau mengecewakan keluarga?",
+                "Sulit berkonsentrasi pada sesuatu, seperti membaca koran atau menonton TV?",
+                "Bergerak atau berbicara sangat lambat hingga orang lain memperhatikannya? Atau sebaliknya, merasa gelisah sehingga bergerak lebih banyak dari biasanya?",
+                "Berpikiran bahwa lebih baik Anda mati atau ingin melukai diri sendiri dengan cara apapun?"
+            ],
+            currentIdx: 0,
+            scores: [],
+
+            selectAnswer(scoreValue) {
+                this.scores.push(scoreValue);
+                this.currentIdx++;
+
+                if (this.currentIdx < this.questions.length) {
+                    this.renderQuestion();
+                } else {
+                    this.renderResult();
+                }
+            },
+
+            renderQuestion() {
+                const qText = document.getElementById('questionText');
+                const pText = document.getElementById('quizProgressText');
+                const pBar = document.getElementById('quizProgressBar');
+
+                qText.textContent = `${this.currentIdx + 1}. ${this.questions[this.currentIdx]}`;
+                pText.textContent = `Pertanyaan ${this.currentIdx + 1} dari 9`;
+                
+                const percentage = ((this.currentIdx + 1) / this.questions.length) * 100;
+                pBar.style.width = `${percentage}%`;
+            },
+
+            renderResult() {
+                document.getElementById('questionWrapper').classList.add('hidden');
+                document.getElementById('optionsWrapper').classList.add('hidden');
+                
+                const resultWrapper = document.getElementById('resultWrapper');
+                resultWrapper.classList.remove('hidden');
+
+                const totalScore = this.scores.reduce((a, b) => a + b, 0);
+                document.getElementById('resultScoreLabel').textContent = `${totalScore} / 27`;
+
+                const scoreLabel = document.getElementById('resultStatus');
+                const scoreDesc = document.getElementById('resultDesc');
+                const rCard = document.getElementById('resultCardClass');
+
+                // Class styles resetter
+                rCard.className = "p-6 rounded-xl border text-center space-y-3 ";
+
+                if (totalScore <= 4) {
+                    scoreLabel.textContent = "Minimal / Tidak Ada Indikasi Depresi";
+                    scoreDesc.textContent = "Kondisi psikologis Anda saat ini tergolong stabil secara umum. Tetap jaga kesehatan mental dan fisik Anda.";
+                    rCard.classList.add('bg-green-50', 'border-green-200', 'text-green-900');
+                } else if (totalScore <= 9) {
+                    scoreLabel.textContent = "Indikasi Depresi Ringan";
+                    scoreDesc.textContent = "Anda terindikasi mengalami tekanan emosional ringan. Disarankan untuk beristirahat cukup, berdiskusi dengan orang terpercaya, atau melakukan meditasi.";
+                    rCard.classList.add('bg-blue-50', 'border-blue-200', 'text-blue-900');
+                } else if (totalScore <= 14) {
+                    scoreLabel.textContent = "Indikasi Depresi Sedang";
+                    scoreDesc.textContent = "Gejala distress emosional Anda cukup signifikan. Disarankan melakukan konseling dengan psikolog klinis untuk mencegah eskalasi kondisi.";
+                    rCard.classList.add('bg-amber-50', 'border-amber-200', 'text-amber-900');
+                } else if (totalScore <= 19) {
+                    scoreLabel.textContent = "Indikasi Depresi Berat Terkontrol";
+                    scoreDesc.textContent = "Tingkat stres dan depresi Anda berada dalam kategori tinggi. Kami sangat menyarankan Anda menghubungi layanan psikolog professional segera.";
+                    rCard.classList.add('bg-orange-50', 'border-orange-200', 'text-orange-900');
+                } else {
+                    scoreLabel.textContent = "Indikasi Depresi Sangat Berat / Fase Krisis";
+                    scoreDesc.textContent = "Anda berada dalam fase krisis emosional kritis. Tolong segera dapatkan bantuan medis profesional, hubungi hotline Kemenkes 119 Ext 8 sekarang juga.";
+                    rCard.classList.add('bg-red-50', 'border-red-200', 'text-red-900');
+                }
+                
+                // If question 9 (Suicidal Ideation) possesses a high value, trigger immediate attention warning
+                if (this.scores[8] > 0) {
+                    scoreLabel.textContent += " (Dibutuhkan Intervensi Cepat)";
+                    scoreDesc.innerHTML = "<strong>Peringatan Khusus:</strong> Deteksi mendeteksi adanya kecenderungan pikiran destruktif/melukai diri sendiri dalam beberapa hari terakhir. Segera hubungi hotline darurat kami.";
+                }
+            },
+
+            resetQuiz() {
+                this.currentIdx = 0;
+                this.scores = [];
+                document.getElementById('questionWrapper').classList.remove('hidden');
+                document.getElementById('optionsWrapper').classList.remove('hidden');
+                document.getElementById('resultWrapper').classList.add('hidden');
+                this.renderQuestion();
+            }
+        };
+
+        // GROUNDING BREATHING TACTICAL BOX SIMULATOR ENGINE
+        const BreathingEngine = {
+            intervalId: null,
+            isRunning: false,
+            states: [
+                { action: "Tarik Napas", duration: 4, scale: "scale-125 bg-brand-600" },
+                { action: "Tahan Napas", duration: 4, scale: "scale-125 bg-emerald-600" },
+                { action: "Hembuskan Napas", duration: 4, scale: "scale-100 bg-slate-700" },
+                { action: "Tahan Paru Kosong", duration: 4, scale: "scale-100 bg-slate-800" }
+            ],
+            currentStateIdx: 0,
+            currentSeconds: 0,
+
+            toggle() {
+                const btn = document.getElementById('startBreathingBtn');
+                if (this.isRunning) {
+                    this.stop();
+                    btn.innerHTML = `<i data-lucide="play" class="w-4 h-4"></i> Mulai Latihan Napas`;
+                } else {
+                    this.start();
+                    btn.innerHTML = `<i data-lucide="square" class="w-4 h-4"></i> Hentikan Latihan`;
+                }
+                lucide.createIcons();
+            },
+
+            start() {
+                this.isRunning = true;
+                this.currentStateIdx = 0;
+                this.currentSeconds = 0;
+                this.executeCycle();
+                
+                this.intervalId = setInterval(() => {
+                    this.currentSeconds++;
+                    if (this.currentSeconds >= this.states[this.currentStateIdx].duration) {
+                        this.currentSeconds = 0;
+                        this.currentStateIdx = (this.currentStateIdx + 1) % this.states.length;
+                    }
+                    this.executeCycle();
+                }, 1000);
+            },
+
+            stop() {
+                this.isRunning = false;
+                clearInterval(this.intervalId);
+                const sphere = document.getElementById('breathingSphere');
+                const actionText = document.getElementById('breathingAction');
+                const timerText = document.getElementById('breathingTimer');
+
+                sphere.className = "w-40 h-40 bg-brand-600/20 border-4 border-brand-500 rounded-full flex flex-col items-center justify-center shadow-[0_0_50px_rgba(22,163,74,0.3)] transition-all duration-1000 ease-in-out transform scale-100";
+                actionText.textContent = "Siap";
+                timerText.textContent = "0s";
+            },
+
+            executeCycle() {
+                const sphere = document.getElementById('breathingSphere');
+                const actionText = document.getElementById('breathingAction');
+                const timerText = document.getElementById('breathingTimer');
+
+                const currentState = this.states[this.currentStateIdx];
+                actionText.textContent = currentState.action;
+                timerText.textContent = `${currentState.duration - this.currentSeconds}s`;
+
+                sphere.className = `w-40 h-40 border-4 border-brand-400 rounded-full flex flex-col items-center justify-center transition-all duration-1000 ease-in-out transform ${currentState.scale} shadow-[0_0_50px_rgba(22,163,74,0.4)]`;
+            }
+        };
+    </script>
+</body>
+</html>
